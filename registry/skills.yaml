@@ -302,3 +302,16 @@ skills:
     quality: official
     recommended_for:
       - ai-application
+
+  pre-approval-reviewer:
+    source: local
+    path: .agents/skills/pre-approval-reviewer
+    category: quality
+    quality: custom
+    recommended_for:
+      - saas
+      - internal-business-system
+      - pos
+      - custom-client-app
+      - ai-application
+      - flutter-app

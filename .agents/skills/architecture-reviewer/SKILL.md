@@ -536,3 +536,80 @@ Ask:
 > "What is the simplest architecture that safely solves the real problem while leaving a reasonable path for future growth?"
 
 The best architecture is the one that solves today's real requirements without creating tomorrow's unnecessary complexity.
+
+## Single Recommendation Review
+
+The Architecture Reviewer must review the planner's **recommended approach**, not treat all possible approaches as equally valid.
+
+Verify that:
+
+1. Exactly one primary architecture has been recommended.
+2. The recommendation addresses the actual requirement.
+3. A simpler viable alternative was considered.
+4. The rejected alternative has a concrete reason for rejection.
+5. The recommendation does not introduce unnecessary abstractions.
+6. The recommendation is consistent with the Project Profile and existing architecture.
+7. The recommendation has an acceptable maintenance and complexity cost.
+
+If multiple competing approaches remain unresolved, return **REVISE**.
+
+Do not resolve major architectural ambiguity implicitly during implementation.
+
+## Evidence Review
+
+For each important architectural claim, verify its evidence classification:
+
+- VERIFIED
+- INFERRED
+- ASSUMED
+- NOT VERIFIED
+- BLOCKED
+
+The reviewer must challenge claims presented as facts when their evidence is unclear.
+
+Examples of claims requiring evidence:
+
+- performance improvements;
+- scalability benefits;
+- accessibility improvements;
+- security improvements;
+- conversion improvements;
+- framework compatibility;
+- production readiness;
+- reduced maintenance cost.
+
+Unsupported claims must not be treated as verified architectural benefits.
+
+## Architecture Simplicity Gate
+
+Prefer the smallest architecture that satisfies:
+
+- functional requirements;
+- UX requirements;
+- accessibility requirements;
+- performance requirements;
+- security requirements;
+- maintainability requirements;
+- expected scalability.
+
+Do not approve additional:
+
+- layers;
+- services;
+- repositories;
+- abstractions;
+- state-management systems;
+- Client Components;
+- dependencies;
+- infrastructure;
+- microservices;
+
+unless a concrete requirement justifies them.
+
+## Final Architecture Decision
+
+Before returning the review result, answer:
+
+> Is this architecture justified by the actual requirements, or is complexity being introduced because it is possible?
+
+If complexity is not justified, return **REVISE** and specify the simpler architecture that should replace it.

@@ -513,3 +513,102 @@ Reference actual files, modules, components, models, routes, and services discov
 Reuse what already works.
 Design before coding.
 Get approval before significant implementation.**
+
+## Recommendation Gate
+
+Every feature plan must select **ONE recommended implementation approach**.
+
+Do not present multiple implementation approaches as unresolved choices for the user to decide unless the user explicitly requested design alternatives.
+
+The planner must:
+
+1. Identify the recommended approach.
+2. Explain why it best satisfies the actual requirement.
+3. Identify the simplest viable alternative.
+4. Explain why that alternative was rejected.
+5. Identify important trade-offs.
+6. Identify meaningful risks.
+7. Identify the expected maintenance and complexity cost.
+
+The recommendation must favor pragmatic, maintainable architecture over novelty or unnecessary sophistication.
+
+### Design Decision Format
+
+Use this structure:
+
+**Recommended approach**
+- One concrete implementation direction.
+
+**Why this approach**
+- Requirement satisfied.
+- Architectural reason.
+- UX reason when relevant.
+- Performance reason when relevant.
+- Maintenance reason.
+
+**Simpler alternative considered**
+- The simplest credible alternative.
+
+**Why it was rejected**
+- Specific limitation or requirement that makes it insufficient.
+
+**Trade-offs**
+- Explicit costs and benefits.
+
+Do not use vague conclusions such as:
+
+- "Option A or B could work."
+- "We can decide during implementation."
+- "It depends."
+- "Either approach is fine."
+
+Choose the best approach based on the available evidence.
+
+## Evidence and Assumption Labels
+
+Every significant planning claim must be classified where applicable as:
+
+- VERIFIED
+- INFERRED
+- ASSUMED
+- NOT VERIFIED
+- BLOCKED
+
+Examples:
+
+**VERIFIED**
+Existing Next.js version is read from package.json.
+
+**INFERRED**
+The existing hero is likely the page's LCP candidate based on its position and image usage.
+
+**ASSUMED**
+The product team wants the hero image to remain above the fold.
+
+**NOT VERIFIED**
+Conversion improvement has not been measured.
+
+**BLOCKED**
+Accessibility verification cannot be completed until the feature is implemented and tested in a browser.
+
+Never present assumptions or inferences as verified facts.
+
+## Complexity Decision
+
+Before proposing new components, abstractions, dependencies, client-side behavior, or visual effects, evaluate:
+
+1. What actual requirement necessitates it?
+2. What simpler implementation was considered?
+3. Why is the simpler implementation insufficient?
+4. What complexity does the proposed solution introduce?
+5. What performance, accessibility, and maintenance costs does it introduce?
+
+Reject complexity introduced solely for visual novelty, perceived sophistication, or architectural neatness.
+
+## Final Recommendation Check
+
+Before handing the plan to Architecture Review, answer:
+
+> Is this the simplest implementation that can satisfy the actual requirements?
+
+If not, simplify the recommendation.

@@ -530,3 +530,26 @@ Avoid:
 **simple → immediately over-engineered → difficult to maintain**
 
 Architecture exists to solve real problems, not to demonstrate architectural knowledge.
+
+## UI Complexity Gate
+
+For UI features, do not introduce multiple Client Components, complex animation systems, mouse tracking, parallax, particles, 3D effects, or additional abstraction layers merely to make the interface appear more sophisticated.
+
+Start with the simplest implementation that satisfies the visual and interaction requirements.
+
+Introduce client-side interactivity only when the actual user experience requires client-side state or browser APIs.
+
+For each additional abstraction or visual effect, identify:
+
+1. What user problem it solves.
+2. Why a simpler implementation is insufficient.
+3. Its performance/accessibility implications.
+4. Whether it is consistent with the Project UI Profile.
+
+Prefer:
+
+typography + composition + spacing + imagery + restrained motion
+
+over:
+
+effects + effects + effects.

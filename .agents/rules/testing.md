@@ -559,3 +559,16 @@ Never call a feature "production-ready" when its required testing status is FAIL
 Tests are not decoration around the implementation.
 
 Tests, browser verification, static analysis, builds, and regression checks are evidence that software behaves as intended.
+
+## Framework-Aware Commands
+
+Never invent framework commands.
+
+Before running lint, test, build, or type-check commands:
+
+1. Inspect package.json/scripts.
+2. Inspect the project's actual tooling/configuration.
+3. Use the project's existing scripts where possible.
+4. Verify that the command is valid for the installed framework version.
+
+Do not use deprecated framework commands merely because they appear in older documentation.

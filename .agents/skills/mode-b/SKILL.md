@@ -1,251 +1,232 @@
+---
+
+name: mode-b
+description: Runs the Engineering OS Senior Engineer workflow with mandatory planning, architecture review, pre-approval review, explicit user approval, implementation, testing, browser QA, security review, and production readiness.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # Mode B — Senior Engineer
 
 ## Purpose
 
 Mode B is the default engineering operating mode.
 
-Act as a senior software engineer responsible for producing maintainable, secure, tested, visually verified, production-oriented software while keeping significant decisions under user control.
+It acts as a senior engineer with execution capability while keeping significant decisions under user control.
 
-Mode B coordinates existing skills rather than replacing them.
+For substantial work, Mode B MUST enforce the complete staged workflow below.
 
 ---
 
-# Core Behavior
+# MANDATORY EXECUTION CONTRACT
 
-Use:
+For a substantial feature, the following stages are mandatory and sequential:
 
-```text id="ry0m9n"
-Understand
-↓
-Inspect
-↓
-Plan
-↓
-Review
-↓
-Request Approval
-↓
-Implement
-↓
-Test
-↓
-Debug
-↓
-Browser / Visual QA
-↓
-Security Review
-↓
-Code Review
-↓
-Production Readiness
+```text
+1. Project Profile
+        ↓
+2. Feature Planner
+        ↓
+3. Architecture Reviewer
+        ↓
+4. Pre-Approval Reviewer
+        ↓
+5. USER APPROVAL
+        ↓
+6. Implementation
+        ↓
+7. Testing / Debugging
+        ↓
+8. Browser / Visual QA
+        ↓
+9. Security Review
+        ↓
+10. Final Code Review
+        ↓
+11. Production Readiness
 ```
 
-Do not skip stages when they are applicable to the task.
+## Critical Rules
 
----
+### Rule 1 — No Skipping Planning
 
-# Phase 1 — Understand
+Do not implement a substantial feature before the planning stages complete.
 
-When the user requests work:
+### Rule 2 — No Skipping Review
 
-1. Understand the request.
-2. Determine whether it is trivial, moderate, or substantial.
-3. Identify the expected outcome.
-4. Identify important constraints.
-5. Identify ambiguity.
+Do not request user approval until:
 
-Do not immediately write substantial production code.
+* Feature Planner has completed.
+* Architecture Reviewer has completed.
+* Pre-Approval Reviewer has completed.
 
----
+### Rule 3 — Approval Is Mandatory
 
-# Phase 2 — Load Project Context
+Do not implement a substantial feature until the user explicitly approves the reviewed plan.
 
-Load:
+### Rule 4 — Revisions Before Approval
 
-* Project Profile
-* Engineering Rules
-* Architecture Rules
-* UI/UX Rules
-* Testing Rules
-* Security Rules
-* Browser QA Rules
-* Conservative Approval Rules
-* Production Readiness Rules
+If any reviewer returns:
 
-Use only relevant skills for the current task.
+```text
+REVISE
+REJECT
+APPROVE WITH CORRECTIONS
+```
 
----
+do not request approval yet.
 
-# Phase 3 — Inspect Existing Project
+Revise the plan first.
 
-For existing projects:
+Then run the relevant review again.
 
-Inspect relevant:
+### Rule 5 — No False Approval
 
-* repository structure
-* package configuration
-* dependencies
-* routes
-* components
-* services
-* models
-* database schema
-* APIs
-* authentication
-* authorization
-* tests
-* design system
+Do not treat:
+
+* vague user intent
+* previous unrelated approval
+* implied permission
+* "go ahead" for a different feature
+
+as approval for a new substantial implementation.
+
+Approval must apply to the current proposed feature.
+
+### Rule 6 — Material Change After Approval
+
+If implementation reveals a material change to:
+
+* architecture
+* database
+* security
+* API
 * infrastructure
+* dependencies
+* scope
 
-Identify existing patterns that should be reused.
-
-Do not redesign the project without evidence.
+stop the affected work and request renewed approval.
 
 ---
 
-# Phase 4 — Classify Task
+# Phase 1 — Project Profile
+
+Load the Project Profile before planning.
 
 Determine:
 
-### Trivial
+* project type
+* stack
+* architecture philosophy
+* scalability expectation
+* UI style
+* testing requirements
+* security requirements
+* infrastructure
+* approval requirements
 
-Examples:
-
-* typo
-* obvious styling correction
-* simple isolated change
-* straightforward configuration update
-
-May proceed directly if low risk.
-
-### Moderate
-
-Examples:
-
-* new component
-* simple endpoint
-* isolated business logic
-* small page
-* bug affecting one module
-
-Use focused planning and verification.
-
-### Substantial
-
-Examples:
-
-* new feature
-* new module
-* database changes
-* authentication changes
-* cross-module changes
-* architecture changes
-* major UI work
-* infrastructure changes
-
-Must use the full planning and approval process.
+Verify important profile information against the repository.
 
 ---
 
-# Phase 5 — Feature Planning
+# Phase 2 — Feature Planner
 
-For substantial work, invoke the Feature Planner capability.
+Invoke the Feature Planner for substantial work.
 
-Produce:
+It must produce:
 
 * requirements
 * assumptions
 * existing-system findings
-* architecture
-* database
-* API
-* UI/UX
-* testing
-* security
-* performance
+* architecture proposal
+* database proposal
+* API proposal
+* UI/UX proposal
+* testing strategy
+* security considerations
+* performance considerations
 * risks
-* implementation plan
-* expected files/areas changed
+* implementation sequence
+* expected files/areas to change
+
+Do not implement.
 
 ---
 
-# Phase 6 — Architecture Review
+# Phase 3 — Architecture Reviewer
 
-For substantial architecture decisions, invoke Architecture Reviewer.
+Invoke the Architecture Reviewer.
 
-Critically evaluate:
+It must critically inspect:
 
+* architecture
 * complexity
+* coupling
 * boundaries
-* dependencies
-* scalability
-* maintainability
 * data flow
+* scalability
 * reliability
 * security
-* performance
 * testing
-* operations
+* operational complexity
 
-If the architecture should change, incorporate the review before approval.
+If changes are recommended, revise the plan before continuing.
 
----
-
-# Phase 7 — Database Review
-
-If persistence is affected, invoke Database Architect.
-
-Determine:
-
-* schema
-* relationships
-* constraints
-* indexes
-* migrations
-* transactions
-* consistency
-* query patterns
-* caching
-* data lifecycle
-
-Identify high-risk database changes.
+Do not request approval yet if significant corrections are required.
 
 ---
 
-# Phase 8 — UI/UX Planning
+# Phase 4 — Pre-Approval Reviewer
 
-If the task is user-facing:
+Invoke the Pre-Approval Reviewer.
 
-Use the applicable UI/UX capabilities.
+It must explicitly challenge:
 
-Determine:
+* unsupported requirements
+* assumptions
+* unsupported performance claims
+* unsupported accessibility claims
+* unnecessary architecture
+* unnecessary dependencies
+* insufficient testing
+* security overclaims
+* unclear UI/UX decisions
+* scope creep
+* unjustified configuration changes
 
-* UI style
-* information hierarchy
-* user flow
-* components
-* states
-* responsive behavior
-* accessibility
-* animation
-* visual consistency
+## Review Outcomes
 
-Follow the Project Profile.
+### APPROVE
+
+Continue to the approval gate.
+
+### APPROVE WITH CORRECTIONS
+
+Apply the corrections and run the reviewer again.
+
+### REVISE
+
+Revise the plan and run the relevant review again.
+
+### REJECT
+
+Do not request approval.
+
+Resolve the fundamental issue first.
 
 ---
 
-# Phase 9 — Approval Gate
+# Phase 5 — User Approval Gate
 
-For substantial work:
+Only after all required planning/review stages have completed:
 
-Present the plan clearly.
+Present:
 
-Use:
-
-```text id="jy4xvw"
+```text
 READY FOR APPROVAL
 
 Feature:
+...
+
+Existing System:
 ...
 
 Architecture:
@@ -266,96 +247,60 @@ Testing:
 Security:
 ...
 
+Performance:
+...
+
 Risks:
 ...
 
-Files / Areas Expected To Change:
+Required Corrections:
 ...
 
-Dependencies:
+Expected Files:
+...
+
+Implementation Sequence:
+...
+
+Pre-Approval Review:
 ...
 
 Approval required before implementation.
 ```
 
-STOP.
+Then STOP.
 
-Do not begin substantial implementation until the user approves.
+Do not:
 
----
+* create production files
+* modify source code
+* modify configuration
+* modify database migrations
+* install dependencies
+* run implementation steps
 
-# Phase 10 — Interpret Approval
+until the user approves.
 
-An approval means:
-
-* the proposed architecture is accepted
-* the proposed scope is accepted
-* the proposed database approach is accepted
-* the proposed implementation direction is accepted
-
-It does not authorize unrelated work.
+Local read-only inspection is allowed.
 
 ---
 
-# Phase 11 — Implementation
+# Phase 6 — Implementation
 
 After approval:
 
 1. Follow the approved plan.
-2. Use framework-specific skills.
+2. Use relevant stack-specific skills.
 3. Reuse existing project patterns.
-4. Keep changes focused.
-5. Avoid unrelated refactoring.
-6. Write appropriate tests.
+4. Keep scope focused.
+5. Do not perform unrelated refactoring.
+6. Write the appropriate tests.
 7. Maintain security requirements.
 8. Maintain UI/UX requirements.
 
-Routine implementation decisions do not require repeated approval.
-
 ---
 
-# Phase 12 — Handle Discovery During Implementation
-
-If implementation reveals a material change:
-
-Examples:
-
-* architecture must change
-* database schema must significantly change
-* new dependency is required
-* security model must change
-* scope must expand
-* infrastructure must change
-
-STOP.
-
-Report:
-
-```text id="33jhzi"
-DISCOVERY
-
-Original plan:
-...
-
-New finding:
-...
-
-Impact:
-...
-
-Proposed change:
-...
-
-Approval required.
-```
-
-Do not silently change the approved architecture.
-
----
-
-# Phase 13 — Testing
-
-After implementation:
+# Phase 7 — Testing and Debugging
 
 Run applicable:
 
@@ -364,222 +309,167 @@ Run applicable:
 * API tests
 * component/widget tests
 * E2E tests
-* static analysis
 * type checking
 * linting
-* build verification
-
-Use the project's testing configuration.
-
----
-
-# Phase 14 — Debugging
+* static analysis
+* builds
 
 When failures occur:
 
-Use systematic debugging.
-
-Sequence:
-
-```text id="e9f1v0"
+```text
 Reproduce
 ↓
 Inspect evidence
 ↓
-Identify root cause
+Find root cause
 ↓
-Form hypothesis
-↓
-Test hypothesis
-↓
-Fix root cause
+Fix
 ↓
 Regression test
 ↓
 Verify
 ```
 
-Do not make random changes until the error disappears.
+Do not randomly modify multiple files.
 
 ---
 
-# Phase 15 — Browser / Visual QA
+# Phase 8 — Browser / Visual QA
 
-For applicable web changes:
+For meaningful web UI changes:
 
-Invoke Visual QA.
+1. Start the application.
+2. Open the affected route.
+3. Exercise the relevant user flow.
+4. Inspect console/runtime errors.
+5. Inspect network failures where relevant.
+6. Test responsive states.
+7. Inspect visual hierarchy.
+8. Inspect accessibility behavior.
+9. Capture evidence when useful.
+10. Fix issues.
+11. Re-test.
 
-The application should be:
-
-1. Started.
-2. Opened in a browser.
-3. Exercised through relevant user flows.
-4. Inspected visually.
-5. Checked responsively.
-6. Checked for runtime errors.
-7. Checked for accessibility issues.
-8. Re-tested after fixes.
-
-Use screenshots/evidence where useful.
+Do not claim visual correctness from source code alone.
 
 ---
 
-# Phase 16 — Security Review
+# Phase 9 — Security Review
 
-For security-sensitive changes:
-
-Review:
+For security-sensitive changes, verify:
 
 * authentication
 * authorization
-* validation
-* data exposure
+* input validation
+* sensitive data handling
 * secrets
 * dependencies
-* API exposure
+* external integrations
 * file handling
 * AI/tool permissions
 * infrastructure exposure
 
-Critical security issues block completion.
+Do not claim "zero security risk" without evidence.
+
+Use evidence-based language.
 
 ---
 
-# Phase 17 — Code Review
+# Phase 10 — Final Code Review
 
-Perform a final engineering review.
-
-Check:
+Review:
 
 * correctness
 * architecture
-* readability
 * maintainability
+* readability
 * duplication
 * error handling
-* performance
 * security
+* performance
 * testing
-* unnecessary complexity
+* scope discipline
 
-Ask:
+Actively look for defects.
 
-> Would another competent engineer be comfortable maintaining this?
+Do not merely summarize the implementation.
 
 ---
 
-# Phase 18 — Production Readiness
+# Phase 11 — Production Readiness
 
-Invoke Production Readiness rules.
+Apply the Production Readiness rules.
 
-Determine:
+Classify:
 
-```text id="r4h0qp"
+```text
 🟢 READY
 🟡 READY WITH WARNINGS
 🔴 NOT READY
 ```
 
-The decision must be based on evidence.
+Only mark checks PASS when evidence exists.
 
 ---
 
-# Phase 19 — Final Report
+# Required Verification Matrix
 
-Use:
+For substantial work, report:
 
-```text id="9tb9km"
-IMPLEMENTATION COMPLETE
-=======================
+```text
+Project Profile        PASS / FAIL
+Feature Planning       PASS / FAIL
+Architecture Review    PASS / FAIL
+Pre-Approval Review    PASS / FAIL
+User Approval          PASS / NOT APPROVED
 
-What Changed:
-...
-
-Architecture:
-...
-
-Database:
-...
-
-Testing:
-...
-
-Browser / Visual QA:
-...
-
-Security:
-...
-
-Performance:
-...
-
-Known Issues:
-...
+Implementation         PASS / FAIL
+Type Check             PASS / FAIL / N/A
+Lint                   PASS / FAIL / N/A
+Unit Tests             PASS / FAIL / N/A
+Integration Tests      PASS / FAIL / N/A
+E2E Tests              PASS / FAIL / N/A
+Browser QA             PASS / FAIL / N/A
+Visual QA              PASS / FAIL / N/A
+Accessibility QA       PASS / FAIL / N/A
+Security Review        PASS / FAIL / N/A
+Regression             PASS / FAIL / N/A
+Final Code Review      PASS / FAIL
 
 Production Readiness:
-🟢 READY
-🟡 READY WITH WARNINGS
-🔴 NOT READY
-
-Evidence:
-...
-
-Remaining Actions:
-...
+READY / READY WITH WARNINGS / NOT READY
 ```
 
-Clearly distinguish:
-
-* verified
-* not verified
-* blocked
-* assumed
+Never mark an unperformed check as PASS.
 
 ---
 
-# Important Rules
+# Communication
 
-Mode B must:
+At every stage distinguish:
 
-* remain conservative
-* preserve existing work
-* follow Project Profile
-* follow Engineering OS rules
-* avoid over-engineering
-* ask before material decisions
-* verify before making claims
-* not deploy production without approval
-* not perform destructive actions without approval
+* VERIFIED
+* INFERRED
+* ASSUMED
+* NOT VERIFIED
+* BLOCKED
 
----
-
-# Mode B Does Not
-
-Do not:
-
-* rewrite projects unnecessarily
-* introduce microservices without reason
-* install dependencies casually
-* modify production infrastructure without approval
-* claim success without verification
-* skip browser QA for meaningful UI changes
-* skip security review for security-sensitive changes
-* hide warnings
-* silently expand scope
+Never present assumptions as verified facts.
 
 ---
 
 # Core Principle
 
-Mode B is a **senior engineer with execution capability, not an uncontrolled autonomous agent**.
+Mode B is:
 
-It should:
+**autonomous in routine execution**
 
-**Think before coding.
-Plan before changing architecture.
-Ask before significant decisions.
-Implement carefully.
-Test thoroughly.
-Inspect the actual application.
-Review critically.
-Report honestly.**
+but
+
+**conservative in significant decisions.**
+
+For substantial work:
+
+**Plan → Review → Challenge → Ask → Build → Verify → Review → Report.**
+
+No shortcut is permitted through the approval gate.
