@@ -1,0 +1,71 @@
+project:
+  name: ""
+  type: ""
+  description: ""
+
+engineering:
+  quality: strict
+  philosophy: pragmatic-clean
+  scalability: high
+  maintainability: high
+  testing: strict
+  security: strict
+
+frontend:
+  framework: ""
+  language: ""
+  styling: ""
+  components: ""
+  state_management: ""
+  ui_style: ""
+
+backend:
+  framework: ""
+  language: ""
+  api_style: ""
+  authentication: ""
+
+mobile:
+  framework: ""
+  language: ""
+  state_management: ""
+
+database:
+  primary: ""
+  secondary: []
+  cache: ""
+
+infrastructure:
+  hosting: ""
+  containerization: ""
+  cdn_dns: ""
+  ci_cd: ""
+  monitoring: ""
+
+ui:
+  style: ""
+  density: comfortable
+  responsive: true
+  accessibility: strict
+  visual_qa: required
+  animation: subtle
+
+testing:
+  unit: required
+  integration: required
+  e2e: required
+  browser: required
+  visual: required
+
+approval:
+  architecture: required
+  database: required
+  security: required
+  major_dependencies: required
+  infrastructure: required
+  deployment: required
+
+ai:
+  providers: []
+  agents: false
+  mcp: false

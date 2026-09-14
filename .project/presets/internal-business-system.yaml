@@ -1,0 +1,66 @@
+project:
+  type: internal_business_system
+
+engineering:
+  quality: strict
+  philosophy: pragmatic-clean
+  scalability: high
+  maintainability: high
+  testing: strict
+  security: strict
+
+frontend:
+  framework: nextjs
+  language: typescript
+  styling: tailwind
+  components: shadcn
+  state_management: project-dependent
+  ui_style: enterprise
+
+backend:
+  framework: laravel
+  language: php
+  api_style: rest
+  authentication: project-dependent
+
+database:
+  primary: postgresql
+  secondary: []
+  cache: redis
+
+infrastructure:
+  hosting: vps
+  containerization: docker
+  cdn_dns: cloudflare
+  ci_cd: github-actions
+  monitoring: project-dependent
+
+ui:
+  style: enterprise
+  density: comfortable
+  responsive: true
+  accessibility: strict
+  visual_qa: required
+  animation: subtle
+
+testing:
+  unit: required
+  integration: required
+  e2e: required
+  browser: required
+  visual: required
+
+approval:
+  architecture: required
+  database: required
+  security: required
+  major_dependencies: required
+  infrastructure: required
+  deployment: required
+
+ai:
+  providers:
+    - openai
+    - gemini
+  agents: true
+  mcp: true
