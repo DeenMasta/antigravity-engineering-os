@@ -1,0 +1,58 @@
+﻿version: 1
+
+sources:
+
+  superpowers:
+    repository: https://github.com/obra/superpowers
+    verification_status: verified
+    installation_method: agy-plugin
+    compatibility:
+      - antigravity
+    version: "6.0.0"
+    commit: ""
+    last_verified: "2026-09-14"
+
+  ui-ux-pro-max:
+    repository: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+    verification_status: verified
+    installation_method: project-local-skill
+    compatibility:
+      - antigravity
+    version: "2.15.0"
+    commit: ""
+    last_verified: "2026-09-14"
+
+  vercel-agent-skills:
+    repository: https://github.com/vercel-labs/agent-skills
+    verification_status: verified
+    installation_method: project-local-skill
+    compatibility:
+      - antigravity
+    version: ""
+    commit: ""
+    included_skills:
+      - react-best-practices
+      - web-design-guidelines
+    last_verified: "2026-09-14"
+
+  flutter-agent-plugins:
+    repository: https://github.com/flutter/agent-plugins
+    verification_status: verified
+    installation_method: project-local-skill
+    compatibility:
+      - flutter
+      - dart
+    version: ""
+    commit: ""
+    last_verified: "2026-09-14"
+
+  laravel-boost:
+    repository: https://github.com/laravel/boost
+    verification_status: verified
+    installation_method: composer
+    compatibility:
+      - laravel
+      - php
+    version: ""
+    commit: ""
+    last_verified: "2026-09-14"

@@ -613,3 +613,113 @@ Before returning the review result, answer:
 > Is this architecture justified by the actual requirements, or is complexity being introduced because it is possible?
 
 If complexity is not justified, return **REVISE** and specify the simpler architecture that should replace it.
+
+## Framework-Aware Tooling Review
+
+The Architecture Reviewer must verify that proposed verification commands match the project's actual tooling.
+
+Before approving commands for:
+
+- linting
+- testing
+- type checking
+- building
+- formatting
+- development servers
+
+verify the project's actual:
+
+- framework;
+- installed version;
+- package manager;
+- package scripts;
+- test tools;
+- lint tools;
+- type-check tools;
+- relevant configuration.
+
+Inspect applicable project files such as:
+
+- package.json
+- composer.json
+- pubspec.yaml
+- lockfiles
+- CI configuration
+- framework/tool configuration files
+
+### Command Validation
+
+Prefer commands already defined by the project.
+
+Do not approve:
+
+- invented commands;
+- commands from unrelated framework versions;
+- deprecated commands;
+- commands unsupported by the installed tooling.
+
+Each proposed command should have one of these evidence labels:
+
+- EXISTING SCRIPT
+- PROJECT CONFIGURATION
+- INSTALLED TOOL
+- FRAMEWORK DOCUMENTATION
+- NOT VERIFIED
+
+A NOT VERIFIED command is not a confirmed project command.
+
+### Review Decision
+
+Return REVISE when verification commands cannot be justified from the actual project tooling.
+
+Before approval, answer:
+
+> Are the proposed verification commands valid for this project's installed framework and tooling?
+
+If this cannot be established, require inspection before approval.
+
+## Framework-Aware Tooling Review
+
+Before approving lint, test, build, type-check, formatting, or development commands, verify the project's actual tooling.
+
+Inspect applicable files:
+
+- package.json
+- composer.json
+- pubspec.yaml
+- lockfiles
+- CI configuration
+- framework/tool configuration
+
+Verify:
+
+1. Framework and installed version.
+2. Package manager.
+3. Existing project scripts.
+4. Installed testing/lint/type-check/build tools.
+5. Relevant configuration.
+
+Prefer existing project scripts.
+
+Do not approve invented or deprecated commands.
+
+### Command Evidence
+
+Classify proposed commands as:
+
+- EXISTING SCRIPT
+- PROJECT CONFIGURATION
+- INSTALLED TOOL
+- FRAMEWORK DOCUMENTATION
+- NOT VERIFIED
+
+A NOT VERIFIED command must not be presented as a confirmed project command.
+
+### Review Decision
+
+Return **REVISE** when a proposed verification command cannot be justified from the actual project tooling.
+
+Before approval, answer:
+
+> Are the proposed verification commands valid for this project's installed framework and tooling?
+

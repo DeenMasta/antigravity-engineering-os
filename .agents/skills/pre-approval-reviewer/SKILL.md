@@ -459,3 +459,113 @@ Before requesting user approval, answer:
 > Is this the simplest architecture that can satisfy the actual product, interaction, visual, accessibility, and performance requirements?
 
 If the answer is no, revise the plan before requesting approval.
+
+## Change Scope and Blast Radius Gate
+
+Every implementation plan must define the expected change scope before approval.
+
+The plan must identify:
+
+1. Files expected to be created.
+2. Files expected to be modified.
+3. Files expected to be deleted or replaced.
+4. Systems or modules affected.
+5. Dependencies affected.
+6. Configuration affected.
+7. Database or API surfaces affected, when applicable.
+8. Expected regression areas.
+
+### Blast Radius Assessment
+
+Classify the expected blast radius as:
+
+- LOW
+- MEDIUM
+- HIGH
+- CRITICAL
+
+Explain why the classification was chosen.
+
+Examples:
+
+**LOW**
+A self-contained UI component with no shared-state or API changes.
+
+**MEDIUM**
+A shared component, layout, authentication flow, or common service is modified.
+
+**HIGH**
+Multiple application layers, shared infrastructure, database schema, or major API contracts are affected.
+
+**CRITICAL**
+Production infrastructure, security boundaries, destructive data operations, authentication/authorization foundations, or irreversible migrations are involved.
+
+### No Unrelated Refactors
+
+Do not include unrelated:
+
+- file reorganizations;
+- component rewrites;
+- dependency upgrades;
+- formatting changes;
+- architecture migrations;
+- naming cleanups;
+- database changes;
+- configuration changes;
+- performance rewrites.
+
+unless they are required for the requested feature.
+
+A discovered improvement is not automatically part of the feature scope.
+
+Record unrelated improvements separately rather than silently implementing them.
+
+### Expected Change Boundary
+
+Before implementation, define an expected change boundary.
+
+The implementation should normally remain inside that boundary unless new evidence requires expansion.
+
+If implementation reveals that additional files or systems must change:
+
+1. Explain why.
+2. Reassess the blast radius.
+3. Determine whether the change remains within approved scope.
+4. Request re-approval when the change is materially larger than approved.
+
+### Expected vs Actual Changes
+
+After implementation, compare the actual Git diff against the approved expected change boundary.
+
+Check for:
+
+- unexpected files;
+- unrelated refactors;
+- unexpected dependencies;
+- unexpected configuration changes;
+- unexpected database changes;
+- unexpected API changes;
+- unexpected deletion or replacement.
+
+Unexpected changes must be investigated before the feature is considered complete.
+
+### Scope Decision
+
+Before approval, answer:
+
+> What is the smallest set of changes required to satisfy this feature?
+
+If the proposed implementation changes significantly more than that set, return **REVISE** and require scope reduction or explicit justification.
+
+### Git Evidence
+
+Use Git as evidence of the actual implementation scope.
+
+The final review must inspect:
+
+- git status;
+- git diff;
+- changed file list;
+- dependency/configuration changes.
+
+Do not claim that implementation stayed within scope without checking the actual changes.

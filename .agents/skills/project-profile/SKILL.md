@@ -595,3 +595,122 @@ Verify it against reality.
 Do not let stale configuration override the repository.
 
 Do not silently change important project requirements.
+
+## Project Profile Enforcement
+
+The Project Profile is the source of truth for project-specific engineering decisions.
+
+Before planning, architecture, implementation, testing, or release work, inspect:
+
+.project/project-profile.yaml
+
+Do not rely on generic assumptions when the Project Profile provides a project-specific value.
+
+## Required Profile Areas
+
+Where present, use the profile to determine:
+
+- project type;
+- frontend framework;
+- backend framework;
+- mobile framework;
+- programming languages;
+- database;
+- cache;
+- infrastructure;
+- UI style;
+- responsive requirements;
+- accessibility level;
+- visual QA requirement;
+- testing requirements;
+- security requirements;
+- approval requirements;
+- AI/provider configuration;
+- engineering mode.
+
+## Profile Overrides
+
+The Project Profile takes precedence over generic skill defaults.
+
+If a profile value conflicts with a generic recommendation:
+
+1. Follow the Project Profile.
+2. Explain the conflict.
+3. Identify whether the profile should be changed.
+4. Do not silently override the profile.
+
+## Missing or Contradictory Profile
+
+If required information is missing or contradictory:
+
+- identify the missing value;
+- classify it as NOT VERIFIED;
+- ask for clarification when the decision materially affects architecture, data, security, infrastructure, or deployment.
+
+Do not invent project configuration.
+
+## Stack Enforcement
+
+Do not introduce technologies that are outside the approved project stack without justification.
+
+For example:
+
+- do not add a backend to a frontend-only project;
+- do not add a database when the profile specifies none;
+- do not replace the configured framework without review;
+- do not add a state-management library without justification.
+
+## Testing Enforcement
+
+Use the Project Profile to determine required verification.
+
+If the profile says a check is:
+
+- required ? perform it or report why it is blocked;
+- optional ? use risk-based judgment;
+- disabled/not applicable ? do not introduce it solely to satisfy a generic rule.
+
+## UI Enforcement
+
+Use the Project Profile's UI settings for:
+
+- style;
+- density;
+- responsiveness;
+- accessibility;
+- visual QA;
+- animation.
+
+Do not introduce a visual direction that conflicts with the profile without explicit approval.
+
+## Approval Enforcement
+
+Use the Project Profile approval requirements to determine when user approval is mandatory.
+
+Never downgrade a required approval step because implementation appears simple.
+
+## Profile Change Rule
+
+Changing the Project Profile itself is a material engineering decision.
+
+Do not silently modify:
+
+.project/project-profile.yaml
+
+during feature implementation.
+
+If the profile must change:
+
+1. Explain why.
+2. Identify the affected decisions.
+3. Request approval when required.
+4. Update the profile explicitly.
+5. Re-evaluate the affected planning and architecture decisions.
+
+## Final Profile Check
+
+Before implementation, answer:
+
+> Have the relevant values in .project/project-profile.yaml been inspected and applied to this decision?
+
+If not, inspect the profile before continuing.

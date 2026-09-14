@@ -1,3 +1,33 @@
+﻿# Engineering OS Skill Registry
+#
+# Metadata rules:
+#
+# source:
+#   local    = maintained inside this Engineering OS repository
+#   external = sourced from an external repository
+#   project  = installed through the target project
+#   future   = placeholder, not currently installed/verified
+#
+# quality:
+#   custom
+#   curated
+#   official
+#   community
+#   to-be-verified
+#
+# verification status:
+#   verified
+#   partially-verified
+#   unverified
+#
+# For external skills, track:
+#   repository
+#   version
+#   commit
+#   installation_method
+#   compatibility
+#   last_verified
+#
 version: 1
 
 skills:

@@ -614,3 +614,261 @@ The agent does not decide that software is ready because it wrote the code.
 It earns the READY status through:
 
 **Implementation → Testing → Browser Verification → Security Review → Regression Review → Evidence → Final Assessment**
+
+## Performance Budget Gate
+
+Performance requirements must be defined according to project type, feature risk, and actual user experience.
+
+Do not make unsupported claims such as "fast", "optimized", or "high performance" without evidence.
+
+### Performance Areas
+
+Evaluate applicable areas:
+
+- initial page load;
+- Largest Contentful Paint;
+- Cumulative Layout Shift;
+- Interaction responsiveness;
+- JavaScript bundle size;
+- image size and loading;
+- API response time;
+- database query performance;
+- memory usage;
+- startup time;
+- mobile performance.
+
+### Landing and Content Websites
+
+Prioritize:
+
+- fast initial rendering;
+- stable layout;
+- optimized hero imagery;
+- limited client-side JavaScript;
+- responsive image loading;
+- sensible animation usage.
+
+Performance should be checked in a browser where practical.
+
+### Business Systems
+
+Evaluate:
+
+- API response time;
+- database queries;
+- table/list rendering;
+- form responsiveness;
+- large dataset behavior;
+- authentication flow latency.
+
+### Mobile Applications
+
+Evaluate:
+
+- application startup;
+- screen transition responsiveness;
+- rendering performance;
+- memory usage;
+- network behavior;
+- offline/loading states where applicable.
+
+### Budget Principle
+
+Use the smallest practical performance budget that protects the important user experience.
+
+A performance budget may be:
+
+- measured;
+- estimated;
+- project-defined;
+- not yet established.
+
+Label the budget accordingly.
+
+### Evidence Labels
+
+Use:
+
+- VERIFIED
+- INFERRED
+- ASSUMED
+- NOT VERIFIED
+- BLOCKED
+
+Do not claim that a performance budget was met unless an actual measurement supports the claim.
+
+### Performance Scope
+
+Before adding performance-related complexity, identify:
+
+1. What performance problem exists?
+2. How is it measured?
+3. What target is being protected?
+4. What simpler solution was considered?
+5. What maintenance cost does the optimization introduce?
+
+Do not introduce caching, memoization, code-splitting, preloading, virtualization, animation systems, or infrastructure complexity without a demonstrated reason.
+
+### Final Performance Decision
+
+Before declaring production readiness, answer:
+
+> What performance requirement matters for this project, what is the target, and what evidence shows whether the target was met?
+
+If the requirement is material but measurement has not been performed, mark the status NOT VERIFIED rather than claiming success.
+
+## Project-Type Production Readiness
+
+Production readiness must be evaluated according to the project's actual type, risk, and architecture.
+
+Do not use one identical release checklist for every project.
+
+### Landing Page / Marketing Website
+
+Verify, where applicable:
+
+- production build succeeds;
+- responsive behavior;
+- browser QA;
+- visual QA;
+- accessibility;
+- metadata/SEO;
+- image optimization;
+- performance;
+- links/navigation;
+- production environment configuration;
+- analytics where required;
+- domain/DNS configuration.
+
+Do not require backend/database checks when those systems do not exist.
+
+### Corporate / Content Website
+
+Verify, where applicable:
+
+- production build;
+- browser QA;
+- responsive behavior;
+- accessibility;
+- navigation;
+- content correctness;
+- SEO;
+- forms;
+- integrations;
+- analytics;
+- environment configuration;
+- deployment configuration.
+
+### Internal Business System
+
+Verify:
+
+- authentication;
+- authorization;
+- critical workflows;
+- validation;
+- API behavior;
+- database behavior;
+- error handling;
+- logging;
+- environment configuration;
+- backup/recovery strategy where data matters;
+- browser QA;
+- security checks;
+- deployment verification.
+
+### POS / Transactional System
+
+Treat release readiness as high risk.
+
+Verify:
+
+- authentication and authorization;
+- pricing calculations;
+- discounts/taxes;
+- transaction integrity;
+- payment handling where applicable;
+- inventory effects;
+- duplicate transaction protection;
+- failure/recovery behavior;
+- database transactions;
+- auditability where required;
+- security controls;
+- backup/recovery;
+- critical browser workflows;
+- deployment rollback strategy.
+
+### SaaS / Full-Stack Application
+
+Verify:
+
+- authentication;
+- authorization;
+- API contracts;
+- database behavior;
+- validation;
+- critical user journeys;
+- error handling;
+- security;
+- logging/monitoring;
+- environment/secrets;
+- migrations;
+- backups;
+- deployment;
+- rollback;
+- browser QA;
+- performance.
+
+### Mobile Application
+
+Verify:
+
+- release build;
+- core user journeys;
+- authentication;
+- API integration;
+- persistence;
+- error/loading states;
+- device/responsive behavior where applicable;
+- permissions;
+- secure configuration;
+- platform-specific release requirements;
+- crash/error monitoring where applicable.
+
+### Production Readiness Status
+
+Use one of:
+
+- READY
+- READY WITH WARNINGS
+- NOT READY
+- BLOCKED
+
+A project must not be marked READY when a required project-specific verification item is:
+
+- FAILED;
+- NOT VERIFIED;
+- BLOCKED.
+
+### Evidence Requirement
+
+Every production-readiness claim must distinguish:
+
+- VERIFIED
+- INFERRED
+- ASSUMED
+- NOT VERIFIED
+- BLOCKED
+
+Do not claim production readiness from a successful build alone.
+
+### Scope Rule
+
+Only require checks that are relevant to the project's actual architecture.
+
+For example:
+
+A static landing page with no backend does not require database, API, queue, or authentication verification.
+
+A POS application does.
+

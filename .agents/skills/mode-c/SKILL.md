@@ -1,4 +1,4 @@
-# Mode C — Engineering Team
+﻿# Mode C â€” Engineering Team
 
 ## Purpose
 
@@ -40,43 +40,43 @@ Use:
 
 ```text id="1c2n7b"
 User Request
-     ↓
+     â†“
 Project Context
-     ↓
+     â†“
 Product Analysis
-     ↓
+     â†“
 Architecture
-     ↓
+     â†“
 UX / UI
-     ↓
+     â†“
 Database
-     ↓
+     â†“
 Implementation Plan
-     ↓
+     â†“
 Architecture Review
-     ↓
-🛑 USER APPROVAL
-     ↓
+     â†“
+ðŸ›‘ USER APPROVAL
+     â†“
 Engineering
-     ↓
+     â†“
 Testing
-     ↓
+     â†“
 Browser / Visual QA
-     ↓
+     â†“
 Security
-     ↓
+     â†“
 Performance
-     ↓
+     â†“
 Final Review
-     ↓
+     â†“
 Production Readiness
-     ↓
+     â†“
 USER
 ```
 
 ---
 
-# Phase 1 — Project Intake
+# Phase 1 â€” Project Intake
 
 Load:
 
@@ -96,7 +96,7 @@ Do not begin implementation immediately.
 
 ---
 
-# Phase 2 — Product Manager
+# Phase 2 â€” Product Manager
 
 Determine:
 
@@ -123,7 +123,7 @@ Do not invent requirements.
 
 ---
 
-# Phase 3 — Architect
+# Phase 3 â€” Architect
 
 Determine:
 
@@ -143,7 +143,7 @@ Avoid unnecessary complexity.
 
 ---
 
-# Phase 4 — UX/UI Designer
+# Phase 4 â€” UX/UI Designer
 
 For user-facing work determine:
 
@@ -165,7 +165,7 @@ The visual design should be verified later through the browser.
 
 ---
 
-# Phase 5 — Database Architect
+# Phase 5 â€” Database Architect
 
 When data is affected, determine:
 
@@ -185,7 +185,7 @@ Use the appropriate database architecture.
 
 ---
 
-# Phase 6 — Cross-Role Review
+# Phase 6 â€” Cross-Role Review
 
 Before presenting the plan, compare the roles.
 
@@ -213,7 +213,7 @@ Resolve conflicts before approval when possible.
 
 ---
 
-# Phase 7 — Architecture Review
+# Phase 7 â€” Architecture Review
 
 Invoke Architecture Reviewer.
 
@@ -233,7 +233,7 @@ If changes are recommended, update the proposal before requesting approval.
 
 ---
 
-# Phase 8 — Unified Plan
+# Phase 8 â€” Unified Plan
 
 Produce one coordinated plan.
 
@@ -257,7 +257,7 @@ Implementation Order
 
 ---
 
-# Phase 9 — Approval Gate
+# Phase 9 â€” Approval Gate
 
 Stop before implementation.
 
@@ -313,7 +313,7 @@ Do not begin significant implementation without approval.
 
 ---
 
-# Phase 10 — Parallel Engineering
+# Phase 10 â€” Parallel Engineering
 
 After approval, roles may work in parallel when dependencies allow.
 
@@ -321,19 +321,19 @@ Example:
 
 ```text
 Frontend
-    ├── UI components
-    └── API integration
+    â”œâ”€â”€ UI components
+    â””â”€â”€ API integration
 
 Backend
-    ├── API
-    └── business logic
+    â”œâ”€â”€ API
+    â””â”€â”€ business logic
 
 Database
-    ├── migration
-    └── indexes
+    â”œâ”€â”€ migration
+    â””â”€â”€ indexes
 
 QA
-    └── test planning
+    â””â”€â”€ test planning
 ```
 
 Do not create conflicting implementations.
@@ -342,7 +342,7 @@ All roles must follow the approved architecture and Project Profile.
 
 ---
 
-# Phase 11 — Shared Contracts
+# Phase 11 â€” Shared Contracts
 
 Before parallel implementation, establish shared contracts where needed:
 
@@ -357,7 +357,7 @@ Changes to shared contracts after approval require review.
 
 ---
 
-# Phase 12 — Engineering
+# Phase 12 â€” Engineering
 
 Use stack-specific skills.
 
@@ -386,7 +386,7 @@ Only use technologies relevant to the current project.
 
 ---
 
-# Phase 13 — QA
+# Phase 13 â€” QA
 
 QA verifies:
 
@@ -408,7 +408,7 @@ Use the appropriate widget/integration testing capabilities.
 
 ---
 
-# Phase 14 — Security Engineer
+# Phase 14 â€” Security Engineer
 
 Review:
 
@@ -429,7 +429,7 @@ Critical issues block readiness.
 
 ---
 
-# Phase 15 — Performance Engineer
+# Phase 15 â€” Performance Engineer
 
 Review when relevant:
 
@@ -446,7 +446,7 @@ Do not optimize without evidence or a justified requirement.
 
 ---
 
-# Phase 16 — Final Reviewer
+# Phase 16 â€” Final Reviewer
 
 The reviewer evaluates the completed implementation independently.
 
@@ -468,7 +468,7 @@ The reviewer should actively search for problems rather than simply confirm prev
 
 ---
 
-# Phase 17 — Disagreement Handling
+# Phase 17 â€” Disagreement Handling
 
 When roles disagree:
 
@@ -481,7 +481,7 @@ The team must not silently choose a high-impact approach when meaningful disagre
 
 ---
 
-# Phase 18 — Scope Control
+# Phase 18 â€” Scope Control
 
 The team must not expand scope because a specialist notices unrelated improvements.
 
@@ -500,7 +500,7 @@ Record these as recommendations unless they are necessary for the approved featu
 
 ---
 
-# Phase 19 — Discovery During Implementation
+# Phase 19 â€” Discovery During Implementation
 
 If implementation reveals a material change:
 
@@ -536,7 +536,7 @@ Approval Required
 
 ---
 
-# Phase 20 — Verification
+# Phase 20 â€” Verification
 
 After implementation:
 
@@ -561,23 +561,23 @@ Only mark checks PASS when evidence exists.
 
 ---
 
-# Phase 21 — Production Readiness
+# Phase 21 â€” Production Readiness
 
 Invoke Production Readiness.
 
 Final result:
 
 ```text
-🟢 READY
-🟡 READY WITH WARNINGS
-🔴 NOT READY
+ðŸŸ¢ READY
+ðŸŸ¡ READY WITH WARNINGS
+ðŸ”´ NOT READY
 ```
 
 Provide evidence and unresolved issues.
 
 ---
 
-# Phase 22 — Final Team Report
+# Phase 22 â€” Final Team Report
 
 Use:
 
@@ -663,3 +663,351 @@ Mode C is not:
 Mode C is:
 
 **one coordinated engineering team with specialized expertise, shared architecture, shared quality standards, and a single approval process.**
+
+# Mode C Agent Execution Pipeline
+
+Mode C operates as a coordinated engineering team.
+
+Do not treat all agents as independent assistants.
+
+Each agent has a defined responsibility and execution stage.
+
+## Agent Roles
+
+### Planner Agent
+
+Responsible for:
+
+- requirement interpretation;
+- project discovery;
+- implementation planning;
+- scope definition;
+- complexity analysis;
+- recommended approach;
+- testing strategy;
+- expected change boundary.
+
+Output:
+
+**PLAN READY FOR ARCHITECTURE REVIEW**
+
+---
+
+### Architecture Agent
+
+Responsible for:
+
+- architecture validation;
+- boundary validation;
+- complexity review;
+- dependency review;
+- blast-radius review;
+- consistency with existing architecture;
+- framework/tooling validation.
+
+Output:
+
+- APPROVE
+- APPROVE WITH CORRECTIONS
+- REVISE
+- REJECT
+
+---
+
+### Security Agent
+
+Responsible for:
+
+- authentication;
+- authorization;
+- validation;
+- secrets;
+- sensitive data;
+- API access;
+- dependency risk;
+- security regressions.
+
+Security review must occur before release.
+
+---
+
+### QA Agent
+
+Responsible for:
+
+- automated testing;
+- framework-aware verification commands;
+- browser QA;
+- responsive QA;
+- visual QA;
+- accessibility checks;
+- regression checks;
+- expected-vs-actual change verification.
+
+Output:
+
+- VERIFIED
+- VERIFIED WITH WARNINGS
+- NOT VERIFIED
+- FAILED
+- BLOCKED
+
+---
+
+
+### Code Review Agent
+
+Responsible for:
+
+- inspecting the actual Git diff;
+- comparing implementation against the approved plan;
+- detecting unrelated changes;
+- detecting unnecessary complexity;
+- checking maintainability;
+- checking framework usage;
+- checking technical debt;
+- checking UI complexity.
+
+Output:
+
+- APPROVE
+- APPROVE WITH CORRECTIONS
+- REVISE
+- REJECT
+
+Code Review must occur after QA and Security and before Release.
+
+### Release Agent
+
+Responsible for:
+
+- production readiness;
+- deployment configuration;
+- environment configuration;
+- migrations;
+- backups;
+- rollback;
+- monitoring;
+- release risk.
+
+Output:
+
+- READY
+- READY WITH WARNINGS
+- NOT READY
+- BLOCKED
+
+---
+
+# Mandatory Execution Order
+
+Mode C must follow this sequence:
+
+1. Project Profile
+2. Project Discovery
+3. Planner Agent
+4. Architecture Agent
+5. Pre-Approval Reviewer
+6. USER APPROVAL
+7. Implementation
+8. QA Agent
+9. Security Agent
+10. Final Code Review
+11. Code Review Agent
+12. Release Agent
+12. Production Readiness
+13. Final Report
+
+Do not skip stages unless the stage is genuinely not applicable.
+
+When a stage is not applicable, record:
+
+**N/A — reason**
+
+---
+
+# Approval Gate
+
+No implementation may begin before:
+
+- Planner Agent completes;
+- Architecture Agent completes;
+- Pre-Approval Reviewer completes;
+- required corrections are resolved;
+- the user explicitly approves the plan.
+
+Approval must be explicit.
+
+Examples of approval:
+
+- "approved"
+- "go ahead"
+- "implement it"
+- equivalent explicit authorization.
+
+Do not interpret:
+
+- conversation momentum;
+- silence;
+- asking questions;
+- requesting clarification;
+
+as approval to implement.
+
+---
+
+# Rejection Handling
+
+If Planner or Architecture Agent returns REVISE or REJECT:
+
+1. Stop.
+2. Revise the plan.
+3. Re-run the relevant review.
+4. Do not implement.
+
+If Pre-Approval Reviewer returns:
+
+- APPROVE ? continue to user approval.
+- APPROVE WITH CORRECTIONS ? correct before requesting approval.
+- REVISE ? revise and review again.
+- REJECT ? stop and redesign.
+
+---
+
+# Post-Approval Scope Protection
+
+After approval:
+
+Do not materially expand the approved architecture or change boundary without re-review.
+
+If implementation reveals a material new requirement:
+
+1. Stop.
+2. Explain the discovery.
+3. Reassess architecture and blast radius.
+4. Obtain re-approval when required.
+
+---
+
+# Agent Communication
+
+Each stage must consume the previous stage's output.
+
+At minimum, carry forward:
+
+- requirement;
+- project profile;
+- approved scope;
+- recommended architecture;
+- rejected alternatives;
+- risks;
+- evidence/assumptions;
+- expected change boundary;
+- testing requirements.
+
+Agents must not silently replace decisions made by earlier stages.
+
+---
+
+# Final Mode C Rule
+
+Mode C should behave like a disciplined engineering team, not unrestricted parallel agents.
+
+Parallel work is allowed only when:
+
+- tasks are independent;
+- scope boundaries are clear;
+- no shared decision is being made;
+- parallel execution cannot bypass approval or review.
+
+Architecture, security, QA, and release decisions must remain independently reviewable.
+
+The final report must include:
+
+- implementation summary;
+- changed files;
+- tests executed;
+- browser/visual QA results;
+- security result;
+- production-readiness result;
+- unresolved warnings;
+- actual Git change scope;
+- final status.
+
+
+## Coordinator Authority
+
+Mode C is coordinated by:
+
+.agents/agents/mode-c-coordinator.md
+
+The Coordinator is the primary orchestration role.
+
+The Coordinator is responsible for:
+
+- selecting the correct specialist agent;
+- enforcing execution order;
+- carrying decisions between stages;
+- enforcing approval gates;
+- handling review failures;
+- protecting approved scope;
+- coordinating QA, security, code review, and release;
+- producing the final engineering status.
+
+Specialist agents remain responsible for their own domain decisions.
+
+The Coordinator must not override a specialist's domain review without explicit reasoning and re-review.
+
+## Specialist Agent Mapping
+
+| Stage | Agent |
+|---|---|
+| Planning | planner-agent |
+| Architecture | architecture-agent |
+| Pre-Approval | pre-approval-reviewer skill |
+| QA | qa-agent |
+| Security | security-agent |
+| Code Review | code-review-agent |
+| Release | release-agent |
+
+## Coordinator First
+
+When Mode C starts:
+
+1. Load the Project Profile.
+2. Load the Mode C Coordinator instructions.
+3. Execute the mandatory workflow.
+4. Invoke specialist responsibilities at the appropriate stage.
+5. Preserve outputs between stages.
+6. Enforce USER APPROVAL before implementation.
+7. Produce the final report only after required reviews.
+
+Do not treat Mode C as a collection of unrelated role prompts.
+
+## Specialist Independence
+
+Specialists may challenge previous decisions within their domain.
+
+Examples:
+
+- Architecture may reject unnecessary complexity.
+- Security may reject unsafe implementation.
+- QA may reject insufficient verification.
+- Code Review may reject poor implementation quality.
+- Release may reject unsafe deployment readiness.
+
+A challenge requires the Coordinator to route the work back to the appropriate stage.
+
+## No Approval Bypass
+
+No specialist may:
+
+- begin implementation before user approval;
+- silently expand approved scope;
+- mark another specialist's required review as complete;
+- convert NOT VERIFIED into VERIFIED;
+- convert BLOCKED into PASS;
+- declare production readiness without release evidence.
+
+The Coordinator must enforce these boundaries.
+

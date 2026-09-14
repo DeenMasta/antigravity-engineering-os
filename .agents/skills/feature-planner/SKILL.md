@@ -612,3 +612,61 @@ Before handing the plan to Architecture Review, answer:
 > Is this the simplest implementation that can satisfy the actual requirements?
 
 If not, simplify the recommendation.
+
+## Framework-Aware Tooling Gate
+
+Before proposing or running any lint, test, build, type-check, formatting, or development command, inspect the project's actual tooling.
+
+Inspect applicable files such as:
+
+- package.json
+- package-lock.json / pnpm-lock.yaml / yarn.lock
+- composer.json / composer.lock
+- pubspec.yaml / pubspec.lock
+- project-specific configuration files
+- existing CI workflows
+
+Determine:
+
+1. Framework and installed version.
+2. Package manager.
+3. Existing scripts.
+4. Existing test/lint/type-check/build tools.
+5. Relevant configuration.
+6. Whether the proposed command is supported by the installed tooling.
+
+Prefer existing project scripts over manually constructed commands.
+
+Never invent commands based on remembered documentation.
+
+Never use a deprecated command when the installed framework/tooling provides a current supported alternative.
+
+### Command Evidence
+
+Every proposed verification command should identify its source:
+
+- EXISTING SCRIPT
+- PROJECT CONFIGURATION
+- INSTALLED TOOL
+- FRAMEWORK DOCUMENTATION
+- NOT VERIFIED
+
+A command marked NOT VERIFIED must not be presented as a confirmed project command.
+
+### Version Awareness
+
+Framework-specific instructions must be compatible with the installed project version.
+
+Do not assume the latest framework behavior.
+
+Do not assume an older framework command still exists.
+
+When there is uncertainty, inspect the project configuration or installed tooling before proceeding.
+
+### Final Tooling Check
+
+Before implementation, answer:
+
+> Have the actual project scripts, tooling, and installed framework versions been inspected before selecting verification commands?
+
+If not, inspect them before continuing.

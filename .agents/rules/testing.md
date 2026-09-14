@@ -572,3 +572,239 @@ Before running lint, test, build, or type-check commands:
 4. Verify that the command is valid for the installed framework version.
 
 Do not use deprecated framework commands merely because they appear in older documentation.
+
+## Risk-Based Testing Gate
+
+Testing requirements must be determined by project type, feature risk, and actual behavior.
+
+Do not require the same testing strategy for every project.
+
+Testing effort should be proportional to:
+
+- business impact;
+- security impact;
+- user impact;
+- data integrity risk;
+- architectural complexity;
+- integration complexity;
+- regression risk;
+- deployment risk.
+
+## Project-Type Testing Guidance
+
+### Landing Pages / Marketing Websites
+
+Prioritize:
+
+- browser verification;
+- responsive verification;
+- visual QA;
+- accessibility verification;
+- performance verification;
+- build/type-check/lint where supported.
+
+Unit and integration tests are optional unless meaningful logic exists.
+
+E2E tests are optional unless the page contains critical interactive flows.
+
+Do not create meaningless tests solely to satisfy a numeric coverage target.
+
+### Corporate / Content Websites
+
+Prioritize:
+
+- browser verification;
+- responsive verification;
+- visual QA;
+- accessibility;
+- content/navigation regression;
+- build/type-check/lint where supported.
+
+Add automated tests when meaningful application logic exists.
+
+### Internal Business Systems
+
+Require stronger coverage of:
+
+- business logic;
+- forms and validation;
+- authentication/authorization;
+- API integration;
+- database behavior;
+- critical workflows;
+- browser-based user flows.
+
+Unit, integration, and E2E testing should be used where they provide meaningful protection.
+
+### POS / Transactional Systems
+
+Treat transactional behavior as high risk.
+
+Require appropriate verification for:
+
+- pricing;
+- totals;
+- discounts;
+- taxes;
+- payments;
+- inventory effects;
+- transaction state;
+- authentication/authorization;
+- failure and recovery paths;
+- API/database consistency.
+
+Critical workflows require automated coverage appropriate to the architecture.
+
+### SaaS / Full-Stack Applications
+
+Testing should cover the major application boundaries:
+
+- domain/business logic;
+- API contracts;
+- authentication;
+- authorization;
+- database behavior;
+- critical frontend flows;
+- integration points;
+- critical browser workflows.
+
+Add E2E coverage for high-value user journeys.
+
+### Mobile Applications
+
+Prioritize:
+
+- core business logic;
+- state transitions;
+- API integration;
+- authentication;
+- persistence;
+- navigation;
+- critical user journeys;
+- device/responsive behavior where applicable.
+
+Use widget/unit/integration testing according to actual risk.
+
+## Feature Risk Classification
+
+Every significant feature should be classified:
+
+- LOW
+- MEDIUM
+- HIGH
+- CRITICAL
+
+### LOW
+
+Examples:
+
+- static UI changes;
+- copy changes;
+- isolated styling;
+- non-critical visual adjustments.
+
+Use focused verification rather than unnecessary broad test suites.
+
+### MEDIUM
+
+Examples:
+
+- reusable components;
+- forms;
+- navigation;
+- moderate client state;
+- non-critical API integrations.
+
+Use appropriate unit/integration/browser verification.
+
+### HIGH
+
+Examples:
+
+- authentication;
+- authorization;
+- payments;
+- business rules;
+- data mutations;
+- shared services;
+- important API contracts.
+
+Require stronger automated and integration coverage.
+
+### CRITICAL
+
+Examples:
+
+- financial transactions;
+- destructive data operations;
+- security boundaries;
+- permission systems;
+- irreversible migrations;
+- core infrastructure changes.
+
+Require the strongest practical verification and explicit review before release.
+
+## Test Selection Rule
+
+Before adding a test, identify:
+
+1. What behavior is being protected?
+2. What failure would this test catch?
+3. What regression risk exists?
+4. Why is this test level appropriate?
+
+Prefer the lowest-cost test level that provides meaningful protection.
+
+Use this general order when appropriate:
+
+unit ? integration ? browser/E2E ? manual/visual verification
+
+Do not automatically use the most expensive test level.
+
+## No Meaningless Coverage
+
+Do not add tests solely to:
+
+- increase coverage percentages;
+- satisfy an arbitrary test count;
+- test framework internals;
+- test trivial implementation details;
+- duplicate stronger existing tests.
+
+Tests should protect behavior and reduce regression risk.
+
+## Testing Evidence
+
+Testing claims must use evidence labels:
+
+- VERIFIED
+- INFERRED
+- ASSUMED
+- NOT VERIFIED
+- BLOCKED
+
+Examples:
+
+**VERIFIED**
+The project's package scripts contain a working test command.
+
+**VERIFIED**
+The critical checkout flow passed browser verification.
+
+**NOT VERIFIED**
+No automated accessibility audit has been run.
+
+**BLOCKED**
+A production-only integration cannot be verified locally.
+
+Do not claim a feature is fully tested without identifying what was actually executed.
+
+## Final Testing Decision
+
+Before declaring a feature complete, answer:
+
+> Does the selected testing strategy provide meaningful protection against the most important failures for this feature?
+
+If not, revise the testing strategy before completion.
+
+Do not equate "more tests" with "better testing."
