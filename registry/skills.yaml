@@ -1,0 +1,304 @@
+version: 1
+
+skills:
+
+  # ============================================================
+  # CUSTOM ENGINEERING OS
+  # ============================================================
+
+  feature-planner:
+    source: local
+    path: .agents/skills/feature-planner
+    category: core
+    quality: custom
+    recommended_for:
+      - saas
+      - internal-business-system
+      - pos
+      - custom-client-app
+      - ai-application
+      - flutter-app
+
+  architecture-reviewer:
+    source: local
+    path: .agents/skills/architecture-reviewer
+    category: architecture
+    quality: custom
+    recommended_for:
+      - saas
+      - internal-business-system
+      - pos
+      - custom-client-app
+      - ai-application
+      - flutter-app
+
+  database-architect:
+    source: local
+    path: .agents/skills/database-architect
+    category: database
+    quality: custom
+    recommended_for:
+      - saas
+      - internal-business-system
+      - pos
+      - custom-client-app
+      - ai-application
+
+  project-profile:
+    source: local
+    path: .agents/skills/project-profile
+    category: core
+    quality: custom
+    recommended_for:
+      - all
+
+  visual-qa:
+    source: local
+    path: .agents/skills/visual-qa
+    category: uiux
+    quality: custom
+    recommended_for:
+      - landing-page
+      - corporate-website
+      - saas
+      - internal-business-system
+      - pos
+      - custom-client-app
+
+  mode-b:
+    source: local
+    path: .agents/skills/mode-b
+    category: orchestration
+    quality: custom
+    recommended_for:
+      - all
+
+  mode-c:
+    source: local
+    path: .agents/skills/mode-c
+    category: orchestration
+    quality: custom
+    recommended_for:
+      - saas
+      - internal-business-system
+      - pos
+      - custom-client-app
+      - ai-application
+      - flutter-app
+
+
+  # ============================================================
+  # UI / UX
+  # ============================================================
+
+  ui-ux-pro-max:
+    source: local
+    path: .agents/skills/ui-ux-pro-max
+    category: uiux
+    quality: curated
+    recommended_for:
+      - landing-page
+      - corporate-website
+      - saas
+      - internal-business-system
+      - pos
+      - custom-client-app
+      - flutter-app
+
+  ui-styling:
+    source: local
+    path: .agents/skills/ui-styling
+    category: uiux
+    quality: curated
+    recommended_for:
+      - landing-page
+      - corporate-website
+      - saas
+      - internal-business-system
+      - pos
+      - custom-client-app
+
+  design-system:
+    source: local
+    path: .agents/skills/design-system
+    category: uiux
+    quality: curated
+    recommended_for:
+      - saas
+      - internal-business-system
+      - pos
+      - custom-client-app
+
+  web-design-guidelines:
+    source: local
+    path: .agents/skills/web-design-guidelines
+    category: frontend
+    quality: curated
+    recommended_for:
+      - landing-page
+      - corporate-website
+      - saas
+      - internal-business-system
+      - custom-client-app
+
+
+  # ============================================================
+  # REACT / NEXT
+  # ============================================================
+
+  vercel-react-best-practices:
+    source: local
+    path: .agents/skills/vercel-react-best-practices
+    category: frontend
+    quality: curated
+    recommended_for:
+      - landing-page
+      - corporate-website
+      - saas
+      - internal-business-system
+      - pos
+      - custom-client-app
+
+  vercel-composition-patterns:
+    source: local
+    path: .agents/skills/vercel-composition-patterns
+    category: frontend
+    quality: curated
+    recommended_for:
+      - saas
+      - internal-business-system
+      - pos
+      - custom-client-app
+
+
+  # ============================================================
+  # BROWSER
+  # ============================================================
+
+  playwright-cli:
+    source: local
+    path: .agents/skills/playwright-cli
+    category: testing
+    quality: curated
+    recommended_for:
+      - landing-page
+      - corporate-website
+      - saas
+      - internal-business-system
+      - pos
+      - custom-client-app
+
+
+  # ============================================================
+  # FLUTTER / DART
+  # ============================================================
+
+  flutter-architecture:
+    source: local
+    path: .agents/skills/flutter-apply-architecture-best-practices
+    category: mobile
+    quality: curated
+    recommended_for:
+      - flutter-app
+
+  flutter-widget-test:
+    source: local
+    path: .agents/skills/flutter-add-widget-test
+    category: testing
+    quality: curated
+    recommended_for:
+      - flutter-app
+
+  flutter-integration-test:
+    source: local
+    path: .agents/skills/flutter-add-integration-test
+    category: testing
+    quality: curated
+    recommended_for:
+      - flutter-app
+
+  flutter-responsive:
+    source: local
+    path: .agents/skills/flutter-build-responsive-layout
+    category: mobile
+    quality: curated
+    recommended_for:
+      - flutter-app
+
+  flutter-http:
+    source: local
+    path: .agents/skills/flutter-use-http-package
+    category: mobile
+    quality: curated
+    recommended_for:
+      - flutter-app
+
+  flutter-routing:
+    source: local
+    path: .agents/skills/flutter-setup-declarative-routing
+    category: mobile
+    quality: curated
+    recommended_for:
+      - flutter-app
+
+  dart-static-analysis:
+    source: local
+    path: .agents/skills/dart-run-static-analysis
+    category: mobile
+    quality: curated
+    recommended_for:
+      - flutter-app
+
+
+  # ============================================================
+  # PLACEHOLDERS FOR FUTURE VERIFIED SKILLS
+  # ============================================================
+
+  laravel:
+    source: project
+    category: backend
+    quality: official
+    installation: laravel-boost
+    recommended_for:
+      - internal-business-system
+      - pos
+      - custom-client-app
+      - saas
+
+  nodejs:
+    source: project
+    category: backend
+    quality: official
+    installation: to-be-verified
+    recommended_for:
+      - saas
+      - custom-client-app
+      - ai-application
+
+  security:
+    source: future
+    category: security
+    quality: to-be-verified
+    recommended_for:
+      - all
+
+  performance:
+    source: future
+    category: performance
+    quality: to-be-verified
+    recommended_for:
+      - all
+
+  openai:
+    source: future
+    category: ai
+    quality: official
+    recommended_for:
+      - ai-application
+
+  gemini:
+    source: future
+    category: ai
+    quality: official
+    recommended_for:
+      - ai-application
